@@ -11,6 +11,12 @@ public class Review03 {
 		BaseBallTeam carp = new BaseBallTeam("広島東洋カープ", 66, 74, 3);
 		BaseBallTeam dragons = new BaseBallTeam("中日ドラゴンズ", 66, 75, 2);
 		
+		swallows.report();
+		baystars.report();
+		tigers.report();
+		giants.report();
+		carp.report();
+		dragons.report();
 		
 	}
 
