@@ -12,11 +12,12 @@ public class BaseBallTeam {
 	public BaseBallTeam() {
 	}
 	
-	public BaseBallTeam(String name, int win, int lose, int draw) {
+	public BaseBallTeam(String name, int win, int lose, int draw, double rate) {
 		this.name = name;
 		this.win = win;
 		this.lose = lose;
 		this.draw = draw;
+		this.rate = rate;
 	}
 
 	public String getName() {
@@ -51,10 +52,18 @@ public class BaseBallTeam {
 		this.draw = draw;
 	}
 	
+	public double getRate() {
+		return rate;
+	}
+	
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
+	
 	//勝率をdoubleで計算し戻すメソッド
 	public static double getRate(int win, int lose) {
-		double result = win * (win + lose);
-		return result;
+		double rate = win * (win + lose);
+		return rate;
 	}
 
 	//reportで結果を表示するメソッド
