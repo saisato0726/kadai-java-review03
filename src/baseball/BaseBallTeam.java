@@ -17,7 +17,7 @@ public class BaseBallTeam {
 		this.win = win;
 		this.lose = lose;
 		this.draw = draw;
-		this.rate = rate;
+		this.rate = getRate(win, lose);
 	}
 
 	public String getName() {
@@ -62,7 +62,8 @@ public class BaseBallTeam {
 	
 	//勝率をdoubleで計算し戻すメソッド
 	public static double getRate(int win, int lose) {
-		double rate = win * (win + lose);
+		int allGames = win + lose;
+		double rate = (double)win / allGames;
 		return rate;
 	}
 
