@@ -6,18 +6,16 @@ public class BaseBallTeam {
 	private int win; //勝ち数
 	private int lose; //負け数
 	private int draw; //引き分け数
-	private double rate; 
 	
 	//引数なしのコンストラクタ
 	public BaseBallTeam() {
 	}
 	
-	public BaseBallTeam(String name, int win, int lose, int draw, double rate) {
+	public BaseBallTeam(String name, int win, int lose, int draw) {
 		this.name = name;
 		this.win = win;
 		this.lose = lose;
 		this.draw = draw;
-		this.rate = getRate(win, lose);
 	}
 
 	public String getName() {
@@ -52,16 +50,8 @@ public class BaseBallTeam {
 		this.draw = draw;
 	}
 	
-	public double getRate() {
-		return rate;
-	}
-	
-	public void setRate(double rate) {
-		this.rate = rate;
-	}
-	
 	//勝率をdoubleで計算し戻すメソッド
-	public static double getRate(int win, int lose) {
+	public double getRate() {
 		int allGames = win + lose;
 		double rate = (double)win / allGames;
 		return rate;
@@ -69,6 +59,7 @@ public class BaseBallTeam {
 
 	//reportで結果を表示するメソッド
 	public void report() {
-		System.out.println(name + "の2022年の成績は、" + win + "勝" + lose + "敗" + draw + "分、勝率は" + rate + "です。");
+		double a = getRate();
+		System.out.println(name + "の2022年の成績は、" + win + "勝" + lose + "敗" + draw + "分、勝率は" + a + "です。");
 	}
 }
